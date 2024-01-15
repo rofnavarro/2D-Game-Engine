@@ -74,7 +74,7 @@ namespace	Engine
 				Device(Device &&device) = delete;
 				~Device(void);
 
-		void	operator=(const Device &rhs) = delete;
+		Device	&operator=(const Device &rhs) = delete;
 	
 		VkCommandPool			&getCommandPool(void) {return (this->_commandPool);}
 		VkDevice				&getDevice(void) {return (this->_device);}

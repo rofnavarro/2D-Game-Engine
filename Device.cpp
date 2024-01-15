@@ -420,10 +420,7 @@ namespace	Engine
 
 		vkGetPhysicalDeviceFeatures(device, &supportedFeatures);
 		
-		return
-		(indices.isComplete() && extensionsSupported &&
-		swapChainAdequate && supportedFeatures.samplerAnisotropy
-		);
+		return (indices.isComplete() && extensionsSupported && swapChainAdequate && supportedFeatures.samplerAnisotropy);
 	}
 
 	std::vector<const char *>	Device::_getRequiredExtensions(void)
