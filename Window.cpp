@@ -37,6 +37,8 @@ namespace	Engine
 	{
 		if (this != &rhs)
 		{
+			glfwDestroyWindow(rhs._window);
+			this->_initWindow();
 			this->_width = rhs._width;
 			this->_height = rhs._height;
 			this->_name = rhs._name;
@@ -47,6 +49,15 @@ namespace	Engine
 	bool	Window::closeWindow(void)
 	{
 		return (glfwWindowShouldClose(this->_window));
+	}
+
+	void	Window::createWindowSurface(VkInstance instance, VkSurfaceKHR *surface)
+	{
+		if (glfwCreateWindowSurface(instance, this->_window, nullptr, surface) != VK_SUCCESS)
+		{
+			throw std::runtime_error("failed to create window surface!");
+		}
+		return ;
 	}
 
 	void	Window::_initWindow(void)

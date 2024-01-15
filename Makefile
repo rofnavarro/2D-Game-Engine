@@ -2,12 +2,12 @@ NAME				=				ge_v1
 
 CC					=				g++
 
-CCFLAGS				=				-Wall -Werror -Wextra -std=c++17
+CCFLAGS				=				-Werror -Wextra -std=c++17
 
 GEFLAGS				=				-lglfw -lvulkan -ldl -lpthread \
 									-lX11 -lXxf86vm -lXrandr -lXi
 
-SRC					=				main.cpp Window.cpp Game.cpp
+SRC					=				main.cpp Game.cpp Window.cpp Pipeline.cpp Device.cpp
 
 OBJ					=				$(SRC:.cpp=.o)
 
